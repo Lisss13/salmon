@@ -1,15 +1,109 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Salmon</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<!DOCTYPE HTML>
+<html lang="ru" ng-app="app">
+<head>
+  <base href="/">
+  <title>Salmon</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--[if lte IE 8]>
+  <script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/assets/css/ie8.css"/><![endif]-->
+  <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <% if current_page? '/' %>
+    <%= render 'shared/main_menu' %>
+  <% else %>
+    <%= render 'shared/menu' %>
+  <% end %>
+
+  <%= yield %>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+
+        <!-- Tweets -->
+        <section class="4u 12u(mobile)">
+          <header>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?z=15&ll=30.417841689336605%2C59.991536593989004&l=map&origin=jsapi_2_1_41&from=api-maps&um=constructor%3AHe6mfpGpZwB9tAUfkMKEC8LiYO2FwF_h">
+              <h2 class="icon fa-map-o  circled"></h2></a>
+          </header>
+          <p>
+            195067, Российская Федерация<br/>
+            город Санкт-Петербург<br/>
+            Непокоренных проспект д. 63<br/> корпус 36 лит. А офис 28
+          </p>
+          <i>Телефон для связи: </i>
+          <ul class="divided">
+            <li>
+              <a href="tel: +7 (812) 438-0016">+7 (812) 438-0016</a> <br/>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Posts -->
+        <section class="4u 12u(mobile)">
+          <header>
+            <h2 class="icon fa-file circled"><span class="label">Posts</span></h2>
+          </header>
+          <ul class="divided">
+            <li>
+              <article class="post stub">
+                <header>
+                  <h3><a href="/about">О компании и продукции</a></h3>
+                </header>
+                <!--<span class="timestamp">3 hours ago</span>-->
+              </article>
+            </li>
+            <li>
+              <article class="post stub">
+                <header>
+                  <h3><a href="/prise/salmon.pdf">Прайс лист</a></h3>
+                </header>
+                <span class="timestamp">6 hours ago</span>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!--Photos-->
+        <section class="4u 12u(mobile)">
+          <header>
+            <h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+          </header>
+          <center>
+            <h1></h1>Фотографий нет
+          </center>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.dropotron.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.scrolly.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.onvisible.min.js"></script>
+<script type="text/javascript" src="/assets/js/skel.min.js"></script>
+<!--[if lte IE 8]>
+<script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+
+<!-- Мои скрипты -->
+<script src="/assets/js/bundle/bundle.js"></script>
+
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
 </html>

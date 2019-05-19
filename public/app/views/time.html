@@ -1,0 +1,71 @@
+<article id="main">
+    <header>
+        <h2>{{fish.title}}</h2>
+        <h3 ng-bind="fish.first.name"></h3>
+    </header>
+    <div class="row">
+        <article class="8u 12u(mobile) special">
+
+            <p>
+                <strong>Происхождение:</strong> {{fish.origin}}<br/>
+                <strong>Размерный ряд:</strong> {{fish.first.size_range}}<br/>
+                <strong>Температура хранения:</strong> {{fish.first.temperature}}<br/>
+                <strong>Срок хранения:</strong> {{fish.first.storage_life}}<br/>
+                <strong>Поставляется</strong> {{fish.first.supplied}}<br/>
+            </p>
+
+
+            <h3 ng-bind="fish.second.name"></h3>
+            <p>
+                <strong>Происхождение:</strong> {{fish.second.origin}}<br/>
+                <strong>Размерный ряд:</strong> {{fish.second.size_range}}<br/>
+                <strong>Температура хранения:</strong> {{fish.second.temperature}}<br/>
+                <strong>Срок хранения:</strong> {{fish.second.storage_life}}<br/>
+                <strong>Поставляется</strong> {{fish.second.supplied}}<br/>
+            </p>
+        </article>
+
+        <article class="4u 12u(mobile) special">
+            <img width="350" height="300" ng-src="{{fish.img}}" alt="">
+        </article>
+    </div>
+    <div class="row">
+        <article class="12u 12u(mobile) special">
+            <p>{{fish.description}}</p>
+        </article>
+    </div>
+    <div class="row">
+        <div class="12u 12u(mobile)">
+            <strong>Выберете размер и узнайте цену мороженного лосося потрошеного, с головой</strong>
+        </div>
+        <div class="5u 12u(mobile)">
+            <form>
+                <select ng-model="data.model">
+                    <option value="" disabled>размер</option>
+                    <option ng-repeat="data in fish.first.info" value="{{data.prise}}">
+                        {{data.size}}
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class="7u 12u(mobile)" ng-if="data.model != null">
+            <h2>Цена : {{data.model}} руб.</h2>
+        </div>
+    </div>
+    <div class="row">
+        <h4>Выберете размер и узнайте цену филе лосося свежемороженое</h4>
+        <div class="5u 12u(mobile)">
+            <form>
+                <select ng-model="data.model2">
+                    <option value="" disabled>размер</option>
+                    <option ng-repeat="data in fish.second.info" value="{{data.prise}}">
+                        {{data.size}}
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class="7u 12u(mobile)" ng-if="data.model2 != null">
+            <h2>Цена : {{data.model2}} руб.</h2>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="8u 12u(mobile)">
+        <p>
+            <h3 class="animated fadeInRight"><span class="animated fadeInUp">{{fish[id].title}}</span></h3>
+            <strong>Происхождение:</strong> <span class="animated fadeInUp">{{fish[id].origin}}</span><br/>
+            <strong>Размерный ряд:</strong><span class="animated fadeInUp"> {{fish[id].size_range}}</span><br/>
+            <strong>Температура хранения:</strong> <span class="animated fadeInUp">{{fish[id].temperature}}</span><br/>
+            <strong>Срок хранения:</strong><span class="animated fadeInUp"> {{fish[id].storage_life}}</span><br/>
+            <strong>Поставляется</strong> <span class="animated fadeInUp">{{fish[id].supplied}}</span><br/>
+        </p>
+    </div>
+    <div class="4u 12u(mobile)">
+            <img  width="280" height="230" ng-src="{{fish[id].img}}" alt="" class="animated fadeInRight">
+    </div>
+
+</div>
+<div class="row">
+    <div class="12u 12u(mobile)">
+            <p ng-bind-html="fish[id].description" class="animated fadeInRight"></p>
+            <strong><a href="/prise/salmon.pdf">Скачать прайс лист</a> </strong>
+    </div>
+</div>

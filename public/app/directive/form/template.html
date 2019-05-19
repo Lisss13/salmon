@@ -1,0 +1,39 @@
+<div class="row" id="form">
+    <a name="contact"></a>
+    <article class="12u 12u(mobile) special">
+        <h3 ng-bind="vl.textform" class="animated fadeInUp"></h3>
+    </article>
+    <article class="12u 12u(mobile) special">
+        <form>
+            <div class="row">
+                <div class="4u 12u(mobile)">
+                    <label for="name">Имя
+                        <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+                        <span ng-if="vl.error.name" style="color: red">Обязательное поле</span>
+                    </label>
+                    <input type="text" id="name" placeholder="имя" ng-model="user.name" />
+                    <label for="lastname">Фамилия</label>
+                    <input type="text" id="lastname" placeholder="фамилия" ng-model="user.lastname" />
+                </div>
+                <div class="4u 12u(mobile)">
+                    <label for="mail">Почта
+                        <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+                        <span ng-if="vl.error.mail" style="color: red">Обязательное поле</span>
+                    </label>
+                    <input type="email" id="mail" placeholder="почта" ng-model="user.mail" />
+                    <label for="phone">Телефон</label>
+                    <input type="text" id="phone" placeholder="телефон" ng-model="user.phone" />
+                </div>
+                <div class="4u 12u(mobile)">
+                    <label for="organization">Организация
+                        <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+                        <span ng-if="vl.error.organization" style="color: red">Обязательное поле</span>
+                    </label>
+                    <input type="text" id="organization" placeholder="организация " ng-model="user.organization" />
+                    <label >Спасибо за обращение</label>
+                    <input class="alt" type="submit" value="отправить" ng-click="vl.sendMail(user)" />
+                </div>
+            </div>
+        </form>
+    </article>
+</div>

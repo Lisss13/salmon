@@ -1,0 +1,37 @@
+<a name="contact"></a>
+<article class="12u 12u(mobile) special">
+    <h3 ng-bind="$cont.textform" class="animated fadeInUp"></h3>
+</article>
+<article class="12u 12u(mobile) special">
+    <form>
+        <div class="row">
+            <div class="4u 12u(mobile)">
+                <label for="name">Имя
+                    <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;">*</span>
+                    <span ng-if="$cont.error.name" style="color: red">Обязательное поле</span>
+                </label>
+                <input type="text" id="name" placeholder="имя" ng-model="$ctrl.user.name"/>
+                <label for="lastname">Фамилия</label>
+                <input type="text" id="lastname" placeholder="фамилия" ng-model="$ctrl.user.lastname"/>
+            </div>
+            <div class="4u 12u(mobile)">
+                <label for="mail">Почта
+                    <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+                    <span ng-if="$cont.error.mail" style="color: red">Обязательное поле</span>
+                </label>
+                <input type="email" id="mail" placeholder="почта" ng-model="$ctrl.user.mail"/>
+                <label for="phone">Телефон</label>
+                <input type="text" id="phone" placeholder="телефон" ng-model="$ctrl.user.phone"/>
+            </div>
+            <div class="4u 12u(mobile)">
+                <label for="organization">Организация
+                    <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+                    <span ng-if="$cont.error.organization" style="color: red">Обязательное поле</span>
+                </label>
+                <input type="text" id="organization" placeholder="организация " ng-model="$ctrl.user.organization"/>
+                <label>Спасибо за обращение</label>
+                <input class="alt" type="submit" value="отправить" ng-click="$cont.sendMail($ctrl.user)"/>
+            </div>
+        </div>
+    </form>
+</article>
