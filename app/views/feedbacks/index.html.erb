@@ -1,0 +1,30 @@
+<div class="inner">
+  <section>
+    <h3>Заявки</h3>
+    <div class="table-wrapper">
+      <table class="alt">
+        <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Телефон / почта</th>
+          <th>Организация</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @feedbacks_list.each do |item| %>
+          <tr>
+            <td>
+              <%= item.name %>
+              <%= item.surname %>
+            </td>
+            <td>
+              <%= item.phone %> / <%= item.email %>
+            </td>
+            <td><%= item.organization %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

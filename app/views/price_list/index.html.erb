@@ -1,0 +1,25 @@
+<div class="inner">
+    <section>
+      <h2>Form</h2>
+        <%= form_with model: PriseList.new, url: prise_path do |f| %>
+          <div class="row gtr-uniform">
+            <div class="col-6 col-12-xsmall">
+              <%= f.file_field :file %>
+            </div>
+            <div class="col-12">
+              <ul class="actions">
+                <li><input type="submit" value="Загрузить" class="primary"></li>
+                <li><input type="reset" value="Удалить"></li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+    </section>
+  <section>
+    <ol>
+    <% @files.each do |item| %>
+        <li><%= link_to item.created_at.strftime('Загружен %d.%m.%Y года'), item.file.url %></li>
+    <% end %>
+    </ol>
+  </section>
+</div>

@@ -1,0 +1,38 @@
+<div class="inner">
+  <header>
+    <h1>Salmon.su</h1>
+    <p>Добро пожаловать</p>
+  </header>
+  <section class="tiles">
+    <article class="style1">
+      <span class="image">
+        <img src="images/pic01.jpg" alt="">
+      </span>
+        <%= link_to prise_url do %>
+          <h2>Загрузить прайс на неделю</h2>
+        <% end %>
+    </article>
+    <article class="style2">
+      <span class="image">
+        <img src="images/pic02.jpg" alt="">
+      </span>
+      <%= link_to feedbacks_url do %>
+        <h2>Заявки</h2>
+        <div class="content">
+          <p>Заявки, оставленные на сайте, от клиента</p>
+        </div>
+      <% end %>
+    </article>
+    <article class="style3">
+      <span class="image">
+        <img src="images/pic02.jpg" alt="">
+      </span>
+      <%= link_to root_url do %>
+        <h2>Главная</h2>
+        <div class="content">
+          <p>Переход на главную страницу сайта</p>
+        </div>
+      <% end %>
+    </article>
+  </section>
+</div>

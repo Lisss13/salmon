@@ -1,0 +1,124 @@
+<!--<h2>Log in</h2>-->
+
+<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<!--  <div class="field">-->
+<!--    <%#= f.label :email %><br />-->
+    <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :password %><br />-->
+    <%#= f.password_field :password, autocomplete: "current-password" %>
+<!--  </div>-->
+
+  <%# if devise_mapping.rememberable? %>
+<!--    <div class="field">-->
+      <%#= f.check_box :remember_me %>
+      <%#= f.label :remember_me %>
+<!--    </div>-->
+  <%# end %>
+
+<!--  <div class="actions">-->
+    <%#= f.submit "Log in" %>
+<!--  </div>-->
+<%# end %>
+
+<%#= render "devise/shared/links" %>
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>Вход</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/admin/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/admin/assets/css/main.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/admin/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/admin/assets/css/ie8.css" /><![endif]-->
+
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <img src="/images/favicon.jpg" alt="" hidden="100" width="200" />
+      </a>
+
+    </div>
+  </header>
+
+
+  <div id="main">
+    <div class="inner">
+      <h1>Вход</h1>
+
+      <!-- Form -->
+<!--      <section>-->
+<!--        <form method="post" action="/admin/login">-->
+<!--          <div class="row uniform">-->
+<!--            <div class="6u$ 12u$(xsmall)">-->
+<!--              <input type="text" name="email" id="demo-email" value="" placeholder="Email" />-->
+<!--            </div>-->
+<!--            <div class="6u 12u$(xsmall)">-->
+<!--              <input type="password" name="password" id="demo-name" value="" placeholder="password" />-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="12u$">-->
+<!--            <ul class="actions">-->
+<!--              <li><input type="submit" value="Войти" class="special" /></li>-->
+<!--              <li><input type="reset" value="Очистить" /></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </form>-->
+<!--      </section>-->
+      <section>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="row uniform">
+            <div class="6u$ 12u$(xsmall)">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="6u$ 12u$(xsmall)">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+
+            <%# if devise_mapping.rememberable? %>
+<!--              <div class="field">-->
+                <%#= f.check_box :remember_me %>
+                <%#= f.label :remember_me %>
+<!--              </div>-->
+            <%# end %>
+
+<!--            <div class="actions">-->
+              <%#= f.submit "Войти", class: 'special' %>
+<!--            </div>-->
+            <div class="12u$">
+              <ul class="actions">
+                <li><%= f.submit "Войти", class: 'special' %></li>
+                <li><input type="reset" value="Очистить" /></li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="/admin/assets/js/jquery.min.js"></script>
+<script src="/admin/assets/js/skel.min.js"></script>
+<script src="/admin/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="/admin/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/admin/assets/js/main.js"></script>
+</body>
+</html>

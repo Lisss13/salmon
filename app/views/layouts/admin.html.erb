@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>Админ</title>
+  <meta charset="utf-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--[if lte IE 8]>
+  <script src="/admin/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/admin/assets/css/main.css"/>
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="/admin/assets/css/ie9.css"/><![endif]-->
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/admin/assets/css/ie8.css"/><![endif]-->
+  <script type="application/javascript" src="/bower_components/angular/angular.js"></script>
+  <script type="application/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="inner">
+
+      <!-- Nav -->
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav id="menu">
+    <h2>Меню</h2>
+    <ul>
+      <li><%= link_to 'Загрузить файл', prise_url %></li>
+      <li><%= link_to 'Заявки', feedbacks_url %></li>
+      <li><%= link_to 'Главная', root_url %></li>
+      <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="/admin/assets/js/jquery.min.js"></script>
+<script src="/admin/assets/js/skel.min.js"></script>
+<script src="/admin/assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="/admin/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/admin/assets/js/main.js"></script>
+
+</body>
+</html>

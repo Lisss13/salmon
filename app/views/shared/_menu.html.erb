@@ -10,10 +10,13 @@
     </div>
     <nav id="nav">
       <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/range#/info">Ассортимент</a></li>
-        <li><a href="/about">О компании</a></li>
-        <li><a href="/contact">Контакты</a></li>
+        <li><%= link_to 'Главная', root_url %></li>
+        <li><%= link_to 'Ассортимент', range_url + '#/info' %></li>
+        <li><%= link_to 'О компании', about_url %></li>
+        <li><%= link_to 'Контакты', contact_url %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Панель администратора', admin_url %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

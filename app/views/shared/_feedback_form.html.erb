@@ -1,0 +1,36 @@
+<div class="row" id="form">
+  <a name="contact"></a>
+  <article class="12u 12u(mobile) special">
+    <h3 class="animated fadeInUp">Отправить заявку на сотрудничество</h3>
+  </article>
+  <article class="12u 12u(mobile) special">
+    <%= form_with model: Feedback.new, url: feedbacks_path do |f| %>
+      <div class="row">
+        <div class="4u 12u(mobile)">
+          <label for="name">Имя
+            <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+          </label>
+          <%= f.text_field :name, placeholder: 'имя', id: 'name' %>
+          <label for="lastname">Фамилия</label>
+          <%= f.text_field :surname, placeholder: 'фамилия', id: 'lastname' %>
+        </div>
+        <div class="4u 12u(mobile)">
+          <label for="mail">Почта
+            <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+          </label>
+          <%= f.email_field :email, placeholder: 'почта', id: 'mail' %>
+          <label for="phone">Телефон</label>
+          <%= f.text_field :phone, placeholder: 'телефон', id: 'phone' %>
+        </div>
+        <div class="4u 12u(mobile)">
+          <label for="organization">Организация
+            <span style="color: #BA0000; font-family: Verdana; font-size: 16px; font-weight: bold;"> *</span>
+          </label>
+          <%= f.text_field :organization, placeholder: 'организация', id: 'organization' %>
+          <label>Спасибо за обращение</label>
+          <%= f.submit 'отправить', class: 'alt' %>
+        </div>
+      </div>
+    <% end %>
+  </article>
+</div>
